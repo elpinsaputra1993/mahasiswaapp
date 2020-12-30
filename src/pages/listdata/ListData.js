@@ -54,7 +54,7 @@ const ListData = ({navigation}) => {
       )
       .then((res) => {
         const mahasiswa = res.data.data;
-        console.log('tes : ' + JSON.stringify(mahasiswa));
+        // console.log('tes : ' + JSON.stringify(mahasiswa));
         setUsers(mahasiswa);
       })
       .catch(function (error) {
@@ -64,13 +64,15 @@ const ListData = ({navigation}) => {
   };
 
   const deleteItem = (item) => {
-    console.log(item);
+    // console.log(item);
     axios
       .delete(
         `http://192.168.43.10/elpin/2020/JuaraCoding/12282020/backend_CRUD_ReactNative/api/mahasiswas/delete/${item.id}`,
       )
       .then(function (response) {
-        alert(JSON.stringify(response));
+        alert(`Proses hapus data berhasil ..!!`);
+        // alert(JSON.stringify(response));
+        console.log(response);
         getData();
       })
       .catch(function (error) {
